@@ -9,3 +9,5 @@
 /docs/_build
 /feincms_elephantblog.egg-info
 /MANIFEST
+*.project
+*.pydevproject
