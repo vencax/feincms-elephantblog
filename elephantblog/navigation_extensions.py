@@ -14,12 +14,14 @@ class BlogCategoriesNavigationExtension(NavigationExtension):
     name = _('blog categories')
 
     def children(self, page, **kwargs):
-        for category in Category.objects.all():
+        for category in Category.objects.all().order_by('?'):
             yield PagePretender(
                 title=category.translation.title,
-                url='%scategory/%s/' % (page.get_absolute_url(), category.translation.slug),
-                tree_id=page.tree_id, # pretty funny tree hack
+                url='%scategory/%s/' % (page.get_absolute_url(),
+                                        category.translation.slug),
+                tree_id=page.tree_id,  # pretty funny tree hack
                 lft=0,
                 rght=0,
+                level=1,
                 slug=category.translation.slug,
                 )

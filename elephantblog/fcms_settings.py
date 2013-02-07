@@ -25,3 +25,10 @@ url_overrides = {
 }
 
 app_content = ('elephantblog.urls', 'Blog')
+
+navigation_extensions_module = ('elephantblog.navigation_extensions', )
+
+available_page_contents = (
+    (('ArchiveContent', 'TagCloudContent', 
+      'NewestEntriesContent', 'BlogEntryListContent'), 'contents'),
+)
